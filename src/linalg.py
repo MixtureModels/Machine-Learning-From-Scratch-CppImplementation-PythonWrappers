@@ -1,4 +1,3 @@
-
 import ctypes
 import pathlib
 import subprocess
@@ -13,7 +12,6 @@ def add_vectors(vec_one, vec_two, size):
     linalg.addVectors(array_type(*vec_one), array_type(*vec_two))
     return array_type
 
-
 if __name__ == "__main__":
 
     # run script to compile cpp files
@@ -26,6 +24,5 @@ if __name__ == "__main__":
 
     # cpp function export message from cpp-library
     linalg.healthCheck()
-
 
     add_vectors([0, 1, 2], [1, 1, 1], 3)
