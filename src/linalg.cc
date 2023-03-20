@@ -12,8 +12,7 @@ extern "C" int healthCheck() {
 }
 
 // Hello world boilerplate helper for adding vectors in cpp
-extern "C" void addVectors(double * vecOne, double * vecTwo) {
-    int sz = 3;
+extern "C" void addVectors(double * vecOne, double * vecTwo, int sz) {
 
     for (int i = 0;  i < sz; i++) {
         double computedVal = vecOne[i] + vecTwo[i];

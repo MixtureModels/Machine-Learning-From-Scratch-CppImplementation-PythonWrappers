@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm Shared/*
+rm Shared/linalg.so
 gcc -fPIC -shared -o linalg.so linalg.cc
 mv linalg.so Shared
 
