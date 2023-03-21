@@ -39,8 +39,7 @@ if __name__ == "__main__":
     linalg = ctypes.CDLL(linalg_lib)
 
     # cpp function export message from cpp-library
-    #linalg.healthCheck()
-
+    linalg.healthCheck()
 
     '''Benchmarking vector operation cpp-loaded vs python-native'''
     stopwatch = Stopwatch(2)
@@ -50,9 +49,8 @@ if __name__ == "__main__":
 
     print('... beginning C++ speed test')
     stopwatch.restart()
-    speed_test_helper(vec_one, vec_two, sz, iterations = 10000, cpp = True)
+    speed_test_helper(vec_one, vec_two, sz, iterations = 100000, cpp = True)
     stopwatch.stop()
-
 
     cpp_time = str(stopwatch)
     print(f'... C++ seconds: {stopwatch}')
@@ -60,7 +58,13 @@ if __name__ == "__main__":
 
     print('... beginning Python speed test')
     stopwatch.restart()
-    speed_test_helper(vec_one, vec_two, sz, iterations = 10000, cpp = False)
+    speed_test_helper(
+        vec_one,
+        vec_two, 
+        sz,
+        iterations = 100000, 
+        cpp = False)
+
     stopwatch.stop()
     python_time = str(stopwatch)
     print(f'... Python seconds: {python_time}')
